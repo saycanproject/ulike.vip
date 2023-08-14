@@ -1,0 +1,202 @@
+/* outline template */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --footer-color: #e0e0e0;  /* slightly darker gray color */
+    --font-color: #333;
+    --bg-color: #f5f5f5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 32px; 
+}
+
+.container {
+    flex: 1 0 auto; /* This will make the container grow and shrink as needed */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card {
+    flex: 0 0 calc(33.33% - 20px);
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Added to make the footer stretch across the entire screen */
+    flex-shrink: 0; /* This will prevent the footer from shrinking */
+    background-color: var(--footer-color);
+    color: var(--font-color);
+    padding: 5px 0; /* reduce padding to make the footer less wide */
+    font-size: 14px;
+    text-align: center; /* Center the text inside the footer */
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.footer-links a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    .nav, .main-content {
+        flex-direction: column;
+    }
+    .card {
+        flex: 0 0 100%;
+        margin: 5px;
+        padding: 10px;
+    }
+    .nav a, .footer {
+        font-size: 14px;
+    }
+}
+
+/* modules */
+.menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+.menu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+.business {
+    background-color: #eee;
+}
+.business h2 {
+    color: var(--primary-color);
+}
+.read-more-button {
+    color: var(--primary-color);
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.hidden {
+    display: none;
+}
+
+.funding input, .funding label {
+    display: block;
+}
+
+.record table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.record th, td {
+    padding: 5px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Add Animation */
+.modal-content {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
